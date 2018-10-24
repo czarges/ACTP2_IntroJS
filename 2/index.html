@@ -12,8 +12,41 @@ de un segundo, al volver hacer click debe volver a estar en blanco y negro.
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+    	.galeria ul li {
+    		list-style: none;
+    		display: block;
+    		float: left;
+    	}
+    	 .galeria img {
+   			height: 200px;
+   			width: 200px;
+   			transition: all .5s ease-in-out;
+   			filter: grayscale(100%);
+    	}
+    	img.color {
+    		filter: none;
+    	}
+    </style>
   </head>
   <body>
+	<section class="galeria">
+		<ul>
+			<li><img src="images/01.jpg" alt=""></li>
+			<li><img src="images/02.jpg" alt=""></li>
+			<li><img src="images/03.jpg" alt=""></li>
+			<li><img src="images/04.jpg" alt=""></li>
+		</ul>
+	</section>
 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	  <script type="text/javascript">
+
+		$('.galeria img').on('click', function(){
+			$(this).toggleClass('color');
+		});
+
+
+	 </script>
   </body>
 </html>
